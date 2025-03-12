@@ -1,0 +1,61 @@
+using System;
+
+namespace 梯形
+{
+    // 抽象類別 Shape
+    abstract class Shape
+    {
+        public abstract double GetArea();
+    }
+
+    // 梯形類別
+    class Trapezoid : Shape
+    {
+        private double base1, base2, height;
+
+        public Trapezoid(double base1, double base2, double height)
+        {
+            this.base1 = base1;
+            this.base2 = base2;
+            this.height = height;
+        }
+
+        public override double GetArea()
+        {
+            return ((base1 + base2) * height) / 2;
+        }
+    }
+
+    // 三角形類別
+    class Triangle : Shape
+    {
+        private double baseLength, height;
+
+        public Triangle(double baseLength, double height)
+        {
+            this.baseLength = baseLength;
+            this.height = height;
+        }
+
+        public override double GetArea()
+        {
+            return (baseLength * height) / 2;
+        }
+    }
+
+    // 圓形類別
+    class Circle : Shape
+    {
+        private double radius;
+
+        public Circle(double radius)
+        {
+            this.radius = radius;
+        }
+
+        public override double GetArea()
+        {
+            return Math.PI * radius * radius;
+        }
+    }
+}
